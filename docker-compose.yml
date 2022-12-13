@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+
+  dev:
+    container_name: react-starter_dev
+    env_file:
+      - .env.local
+      - .env.developement.local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - .:/apps/react-starter
+    ports:
+      - ${PORT}:${PORT}
+
+  build:
+    container_name: react-starter_build
+    env_file:
+      - .env.local
+      - .env.production.local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build
+    volumes:
+      - .:/apps/react-starter
+    command: npm run build
+
+  prod:
+    container_name: react-starter_prod
+    env_file:
+      - .env.local
+      - .env.production.local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      -  ${PORT_NGINX}:80
+
+volumes:
+  reload-volume:
