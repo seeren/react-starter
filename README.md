@@ -5,9 +5,10 @@ This starter provide ready to dev [react-app](https://create-react-app.dev/) wit
 -   [Install](#💿-install)
 -   [Editor](#⌨️-ide)
 -   [Run](#🚀-run)
+-   [Lint](#📐-lint)
+-   [Dev](#👨‍💻-develop)
 -   [Build](#🏗️-build)
 -   [Test](#🧪-test)
--   [Lint](<>)
 
 * * *
 
@@ -21,7 +22,7 @@ Clone this repository.
 git clone https://github.com/seeren/react-starter.git
 ```
 
-Change directory
+Change directory.
 
 ```bash
 cd react-starter
@@ -43,14 +44,13 @@ The file `.vscode/extensions.json` recommand installing folowing extensions:
 
 ### Settings
 
-The file `.vscode/settings.json` recommand folow described settings.
-
+The file `.vscode/settings.json` contain recommanded settings.
 
 * * *
 
 ## 🚀 Run
 
-This section describe how to **run** the project.
+**Execute the project on local environement**
 
 ### Npm
 
@@ -94,9 +94,29 @@ docker exec -it react-starter_dev zsh
 
 * * *
 
+## 📐 Lint
+
+**Enforce code quality and tyle**
+
+Fix lint rules and save file.
+
+```bash
+npm run lint
+```
+
+### Eslint
+
+Lint stack is specific to react typescript and opiniated. There is few rules for encourage to adding them as needed.
+
+* * *
+
+## 👨‍💻 Develop
+
+* * *
+
 ## 🏗️ Build
 
-This section describe how to **build** the project.
+**This section describe how to build the project.**
 
 ### Npm
 
@@ -118,12 +138,7 @@ docker-compose up build
 
 ## 🧪 Test
 
-This section describe how to **test** the project.
+**This section describe how to test the project.**
 
-* * *
-
-## 📐 Lint
-
-This section describe how to **lint** the project.
 
 * * *
