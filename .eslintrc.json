@@ -37,5 +37,17 @@
     "jsx-a11y",
     "prettier"
   ],
-  "rules": {}
+  "rules": {
+    "prettier/prettier": "warn",
+    "max-lines": ["error", 200],
+    "max-lines-per-function": ["error", 20]
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "max-lines-per-function": "off"
+      }
+    }
+  ]
 }
