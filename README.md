@@ -2,11 +2,12 @@
 
 This starter provide ready to dev [react-app](https://create-react-app.dev/) with [typescript](https://www.typescriptlang.org/).
 
-* [Install](#💿-install)
-* [Run](#🚀-run)
-* [Build](#🏗️-build)
-* [Test](#🧪-test)
-* [Lint]()
+-   [Install](#💿-install)
+-   [Editor](#⌨️-ide)
+-   [Run](#🚀-run)
+-   [Build](#🏗️-build)
+-   [Test](#🧪-test)
+-   [Lint](<>)
 
 * * *
 
@@ -25,6 +26,25 @@ Change directory
 ```bash
 cd react-starter
 ```
+
+* * *
+
+## ⌨️ Editor
+
+**[VScode](https://code.visualstudio.com/) is sugested with the provided configuration.**
+
+### Extension
+
+The file `.vscode/extensions.json` recommand installing folowing extensions:
+
+-   [dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to enforce code quality.
+-   [esbenp.prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) to enforce code style.
+-   [mrmlnc.vscode-remark](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-remark) to enforce markdown style.
+
+### Settings
+
+The file `.vscode/settings.json` recommand folow described settings.
+
 
 * * *
 
