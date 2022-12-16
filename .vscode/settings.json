@@ -15,7 +15,7 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
   "[scss]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
