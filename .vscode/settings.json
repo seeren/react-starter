@@ -1,6 +1,19 @@
 {
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.rulers": [80],
+  "editor.rulers": [
+    {
+      "column": 80,
+      "color": "#e0f2fe"
+    },
+    {
+      "column": 100,
+      "color": "#fef3c7"
+    },
+    {
+      "column": 120,
+      "color": "#fee2e2"
+    }
+  ],
   "eslint.format.enable": true,
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
