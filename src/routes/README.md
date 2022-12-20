@@ -1,14 +1,94 @@
 # Routes
 
-Routes declaration goes here.
+> Routing use [react-router](https://reactrouter.com/en/main).
+
+This document encourage to keep a flat folder using composition to scale routes using hook syntax.
 
 * * *
 
 ## 📏 Usage
 
-Declare one route file per page component entry point, embedding their chidren.
+A solution to scale and maintain easily a growing app is to compose routes.
 
+_App.tsx_
+
+```tsx
+import React, { ReactElement } from 'react';
+
+import { Routes } from './routes';
+
+function App(): ReactElement {
+  return <Routes />;
+}
+
+export default App;
+```
+
+Routes are aggregated in routes entry point.
+
+_./routes/Routes.tsx_
+
+```tsx
+import React, { ReactElement } from 'react';
+import { Navigate, useRoutes } from 'react-router-dom';
+
+import RoutesArticles from './RoutesArticles';
+
+function Routes(): ReactElement | null {
+  return useRoutes([
+
+    // Each page entry point are composed
+    ...RoutesArticles(),
+  
+    {
+      path: '*',
+      element: <Navigate to='/articles' />,
+    },
+  ]);
+}
+
+export default Routes;
+```
+
+Declare one route file per page component entry point  with their chidren.
+
+_./routes/RoutesArticles.tsx_
+
+```tsx
+import React from 'react';
+import type { RouteObject } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+
+import { Articles, ArticlesItem, ArticlesSearch } from '../pages/articles';
+
+function RoutesArticles(): RouteObject[] {
+  return [
+    {
+      path: 'articles/*',
+      element: <Articles />,
+      children: [
+        {
+          path: 'search',
+          element: <ArticlesSearch />,
+        },
+        {
+          path: ':id',
+          element: <ArticlesItem />,
+        },
+        {
+          path: '*',
+          element: <Navigate to='search' />,
+        },
+      ],
+    },
+  ];
+}
+
+export default RoutesArticles;
+```
+
+* * *
 
 ## 🔗 References
 
--   <https://reactrouter.com/en/main/hooks/use-routes>
+-   <https://ui.dev/react-router-tutorial#route-config>
