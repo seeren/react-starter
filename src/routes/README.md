@@ -8,14 +8,14 @@ This document encourage to keep a flat folder using composition to scale routes 
 
 ## 📏 Usage
 
-A solution to scale and maintain easily a growing app is to compose routes.
+A solution to scale and maintain easily a growing app is to compose routes using react-router hooks.
 
 _App.tsx_
 
 ```tsx
 import React, { ReactElement } from 'react';
 
-import { Routes } from './routes';
+import { Routes } from 'src/routes';
 
 function App(): ReactElement {
   return <Routes />;
@@ -32,12 +32,12 @@ _./routes/Routes.tsx_
 import React, { ReactElement } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 
-import RoutesArticles from './RoutesArticles';
+import RoutesArticles from 'src/routes/RoutesArticles';
 
 function Routes(): ReactElement | null {
   return useRoutes([
 
-    // Each page entry point are composed
+    // Each page entry point is composed
     ...RoutesArticles(),
   
     {
@@ -59,7 +59,7 @@ import React from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
-import { Articles, ArticlesItem, ArticlesSearch } from '../pages/articles';
+import { Articles, ArticlesItem, ArticlesSearch } from 'src/pages/articles';
 
 function RoutesArticles(): RouteObject[] {
   return [
