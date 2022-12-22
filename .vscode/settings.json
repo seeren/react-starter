@@ -31,12 +31,13 @@
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
   "[scss]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
   "[yaml]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
   "[markdown]": {
     "editor.defaultFormatter": "mrmlnc.vscode-remark"
-  }
+  },
+  "scss.lint.unknownAtRules": "ignore"
 }

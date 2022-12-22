@@ -1,3 +1,8 @@
 {
-  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "mrmlnc.vscode-remark"]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mrmlnc.vscode-remark",
+    "csstools.postcss"
+  ]
 }
