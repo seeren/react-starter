@@ -1,4 +1,4 @@
 import Routes from 'src/routes/Routes';
-import RoutesArticles from 'src/routes/RoutesArticles';
+import RoutesNpmPackages from 'src/routes/RoutesNpmPackages';
 
-export { Routes, RoutesArticles };
+export { Routes, RoutesNpmPackages };

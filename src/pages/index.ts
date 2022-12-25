@@ -1,3 +1,7 @@
-import { Articles, ArticlesItem, ArticlesSearch } from 'src/pages/articles';
+import {
+  NpmPackages,
+  NpmPackagesItem,
+  NpmPackagesSearch,
+} from 'src/pages/npm-packages';
 
-export { Articles, ArticlesItem, ArticlesSearch };
+export { NpmPackages, NpmPackagesItem, NpmPackagesSearch };

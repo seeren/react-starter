@@ -1,3 +1,6 @@
-import { ArticleSearchInput } from 'src/features/articles';
+import {
+  NpmPackageSearchInput,
+  NpmPackageItem,
+} from 'src/features/npm-packages';
 
-export { ArticleSearchInput };
+export { NpmPackageSearchInput, NpmPackageItem };

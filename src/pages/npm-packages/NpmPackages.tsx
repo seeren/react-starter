@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 import { OneColumn } from 'src/layouts';
 
-function Articles(): ReactElement {
+function NpmPackages(): ReactElement {
   return (
     <>
       <OneColumn>
@@ -13,4 +13,4 @@ function Articles(): ReactElement {
   );
 }
 
-export default Articles;
+export default NpmPackages;

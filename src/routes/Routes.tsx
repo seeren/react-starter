@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 
-import RoutesArticles from 'src/routes/RoutesArticles';
+import RoutesNpmPackages from 'src/routes/RoutesNpmPackages';
 
 function Routes(): ReactElement | null {
   return useRoutes([
-    ...RoutesArticles(),
+    ...RoutesNpmPackages(),
     {
       path: '*',
-      element: <Navigate to='/articles' />,
+      element: <Navigate to='/npm/packages' />,
     },
   ]);
 }

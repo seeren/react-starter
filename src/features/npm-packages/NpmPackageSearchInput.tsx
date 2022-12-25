@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react';
 
 import { InputSearch, Label } from 'src/components';
-import useArticleSearch from './useArticleSearch';
+import useNpmPackageSearch from './useNpmPackageSearch';
 
-function ArticleSearchInput(): ReactElement {
-  const [search, setSearch, onSearch] = useArticleSearch();
+function NpmPackageSearchInput(): ReactElement {
+  const [search, setSearch, onSearch] = useNpmPackageSearch();
 
   return (
     <form onSubmit={onSearch} className='gap-4 flex flex-col'>
@@ -18,4 +18,4 @@ function ArticleSearchInput(): ReactElement {
   );
 }
 
-export default ArticleSearchInput;
+export default NpmPackageSearchInput;
