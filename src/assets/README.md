@@ -1,14 +1,16 @@
 # Assets
 
-> Assets use [tailwindcss](https://tailwindcss.com/), adapt as needed.
-
 Saving assets in src directory is a good solution and it is oftentimes encouraged to use instead of the static file serving.
+
+Assets are used by all types of components.
 
 * * *
 
 ## 📏 Usage
 
 Store in this folder globals assets.
+
+For assets used by components, scope them in the related folder.
 
 _scss/index.scss_
 
@@ -17,8 +19,6 @@ _scss/index.scss_
 @tailwind components;
 @tailwind utilities;
 ```
-
-For assets used by components, scope them in the related folder.
 
 * * *
 

@@ -1,12 +1,66 @@
 # Pages
 
-Page components are independents and only used by entry point component and router, they can rely on hooks, services but it's discouraged, at least they can use contexts.
+Create a folder to each parent route with their children.
+
+Page components are used by [Routes.jsx](./../routes/Routes.tsx).
 
 * * *
 
 ## 📏 Usage
 
-Their responsability is to declare layouts and feature components. A root page is represented by a folder that contain component page and it children.
+Parent page is responsible to declare [Layout](./../layouts/) and embeed routed child components inside, they can eather use [Feature Components](./../features/).
+
+_pages/npm-packages/NpmPackage.tsx_
+
+```jsx
+import React, { ReactElement } from 'react';
+import { Outlet } from 'react-router-dom';
+
+import { OneColumn } from 'src/layouts';
+
+function NpmPackage(): ReactElement {
+  return (
+    <>
+      <OneColumn>
+        <Outlet />
+      </OneColumn>
+    </>
+  );
+}
+
+export default NpmPackage;
+```
+
+Children are responsible to declare feature components and provide arguments.
+
+_pages/npm-packages/NpmPackageResult.tsx_
+
+```tsx
+import React, { ReactElement } from 'react';
+import type { Params } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
+import { NpmPackageList } from 'src/features';
+
+function NpmPackageResult(): ReactElement {
+  const { name }: Readonly<Params<string>> = useParams();
+
+  return (
+    <>
+      <h1 className='text-2xl my-6'>
+        Seach article: {name}
+      </h1>
+      <section>
+        <NpmPackageList name={`${name}`} />
+      </section>
+    </>
+  );
+}
+
+export default NpmPackageResult;
+```
+
+* * *
 
 ## 🔗 References
 

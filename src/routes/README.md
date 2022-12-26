@@ -1,14 +1,14 @@
 # Routes
 
-> Routing use [react-router](https://reactrouter.com/en/main).
+Keep a flat folder as possible using composition to scale routes with hook syntax.
 
-This document encourage to keep a flat folder using composition to scale routes using hook syntax.
+Routes are used by [App.txs](./../App.tsx).
 
 * * *
 
 ## 📏 Usage
 
-A solution to scale and maintain easily a growing app is to compose routes using react-router hooks.
+A solution to scale and maintain easily a growing app is to compose routes using [react-router](https://reactrouter.com/en/main) hooks.
 
 _App.tsx_
 
@@ -16,6 +16,7 @@ _App.tsx_
 import React, { ReactElement } from 'react';
 
 import { Routes } from 'src/routes';
+import 'src/assets/scss/index.scss';
 
 function App(): ReactElement {
   return <Routes />;
@@ -26,23 +27,22 @@ export default App;
 
 Routes are aggregated in routes entry point.
 
-_./routes/Routes.tsx_
+_routes/Routes.tsx_
 
 ```tsx
 import React, { ReactElement } from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
 
-import RoutesArticles from 'src/routes/RoutesArticles';
+import RoutesNpmPackages from 'src/routes/RoutesNpmPackage';
 
 function Routes(): ReactElement | null {
   return useRoutes([
 
-    // Each page entry point is composed
-    ...RoutesArticles(),
-  
+    ...RoutesNpmPackages(),
+
     {
       path: '*',
-      element: <Navigate to='/articles' />,
+      element: <Navigate to='/npm/package' />,
     },
   ]);
 }
@@ -50,30 +50,34 @@ function Routes(): ReactElement | null {
 export default Routes;
 ```
 
-Declare one route file per page component entry point  with their chidren.
+Declare one route file per [Page Component](./../pages/) entry point.
 
-_./routes/RoutesArticles.tsx_
+_routes/RoutesArticles.tsx_
 
 ```tsx
 import React from 'react';
 import type { RouteObject } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
-import { Articles, ArticlesItem, ArticlesSearch } from 'src/pages/articles';
+import {
+  NpmPackage,
+  NpmPackageResult,
+  NpmPackageSearch,
+} from 'src/pages/npm-packages';
 
-function RoutesArticles(): RouteObject[] {
+function RoutesNpmPackage(): RouteObject[] {
   return [
     {
-      path: 'articles/*',
-      element: <Articles />,
+      path: 'npm/package/*',
+      element: <NpmPackage />,
       children: [
         {
-          path: 'search',
-          element: <ArticlesSearch />,
+          path: '',
+          element: <NpmPackageSearch />,
         },
         {
-          path: ':id',
-          element: <ArticlesItem />,
+          path: ':name',
+          element: <NpmPackageResult />,
         },
         {
           path: '*',
@@ -84,7 +88,18 @@ function RoutesArticles(): RouteObject[] {
   ];
 }
 
-export default RoutesArticles;
+export default RoutesNpmPackage;
+```
+
+A best practice is to make module discoverable in en entry point, this solution apply to every folders.
+
+_routes/index.ts_
+
+```ts
+import Routes from 'src/routes/Routes';
+import RoutesNpmPackage from 'src/routes/RoutesNpmPackage';
+
+export { Routes, RoutesNpmPackage };
 ```
 
 * * *
@@ -92,3 +107,4 @@ export default RoutesArticles;
 ## 🔗 References
 
 -   <https://ui.dev/react-router-tutorial#route-config>
+-   <https://betterprogramming.pub/consolidate-your-typescript-imports-with-index-ts-files-cee934c665a7>

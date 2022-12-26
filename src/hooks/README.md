@@ -1,12 +1,67 @@
 # Hooks
 
-Shared states goes in the hook folder. A hook can use slices, selectors, services or other hooks.
+Hooks handle components lifecycle hooks, local states and events and execute globals actions.
+
+Hooks are used by other hooks, [Pages](./../pages/), [Layouts](./../layouts/) and [Features](./../features/).
 
 * * *
 
 ## 📏 Usage
 
-When hook handle global state, declare it here. When hook is specific to a feature and non shared, declare it in the component folder.
+Shared states goes in the hook folder otherwise they are local
+
+Example using [redux-tookit](https://redux-toolkit.js.org/):
+
+_features/npm-packages/use-npm-package-list.ts_
+
+```jsx
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import type {} from 'redux-thunk/extend-redux';
+
+import { searchNpmPakage } from 'src/slices/npm-package-slice';
+import { selectNpmPackage } from 'src/selectors';
+import { NpmPackageResult } from 'src/models';
+
+function useNpmPackageList(
+  name: string,
+): [boolean, NpmPackageResult | undefined] {
+  const dispatch = useDispatch();
+  const { fetch, search } = useSelector(selectNpmPackage);
+
+  useEffect(() => {
+    dispatch(searchNpmPakage(name));
+  }, [name, dispatch]);
+
+  return [fetch, search];
+}
+export default useNpmPackageList;
+```
+
+Example using local component state:
+
+_features/npm-packages/use-npm-package-search.ts_
+
+```tsx
+import { Dispatch, SetStateAction, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+function useNpmPackageSearch(): [
+  string,
+  Dispatch<SetStateAction<string>>,
+  () => boolean,
+] {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState(String);
+  const onSearch = (): boolean => Boolean(navigate(`/npm/package/${search}`));
+
+  return [search, setSearch, onSearch];
+}
+
+export default useNpmPackageSearch;
+```
+
+* * *
 
 ## 🔗 References
 
