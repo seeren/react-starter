@@ -3,24 +3,24 @@ import type { RouteObject } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
 import {
-  NpmPackages,
-  NpmPackagesItem,
-  NpmPackagesSearch,
+  NpmPackage,
+  NpmPackageResult,
+  NpmPackageSearch,
 } from 'src/pages/npm-packages';
 
-function RoutesNpmPackages(): RouteObject[] {
+function RoutesNpmPackage(): RouteObject[] {
   return [
     {
-      path: 'npm/packages/*',
-      element: <NpmPackages />,
+      path: 'npm/package/*',
+      element: <NpmPackage />,
       children: [
         {
-          path: 'search',
-          element: <NpmPackagesSearch />,
+          path: '',
+          element: <NpmPackageSearch />,
         },
         {
           path: ':name',
-          element: <NpmPackagesItem />,
+          element: <NpmPackageResult />,
         },
         {
           path: '*',
@@ -31,4 +31,4 @@ function RoutesNpmPackages(): RouteObject[] {
   ];
 }
 
-export default RoutesNpmPackages;
+export default RoutesNpmPackage;

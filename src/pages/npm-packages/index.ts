@@ -1,5 +1,5 @@
-import NpmPackages from './NpmPackages';
-import NpmPackagesItem from './NpmPackagesItem';
-import NpmPackagesSearch from './NpmPackagesSearch';
+import NpmPackage from './NpmPackage';
+import NpmPackageResult from './NpmPackageResult';
+import NpmPackageSearch from './NpmPackageSearch';
 
-export { NpmPackages, NpmPackagesItem, NpmPackagesSearch };
+export { NpmPackage, NpmPackageResult, NpmPackageSearch };

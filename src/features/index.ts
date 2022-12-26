@@ -1,6 +1,6 @@
 import {
   NpmPackageSearchInput,
-  NpmPackageItem,
+  NpmPackageList,
 } from 'src/features/npm-packages';
 
-export { NpmPackageSearchInput, NpmPackageItem };
+export { NpmPackageSearchInput, NpmPackageList };

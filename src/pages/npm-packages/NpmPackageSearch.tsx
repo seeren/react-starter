@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 
 import { NpmPackageSearchInput } from 'src/features';
 
-function NpmPackagesSearch(): ReactElement {
+function NpmPackageSearch(): ReactElement {
   return (
     <>
       <h1 className='text-2xl my-6'>Seach article</h1>
@@ -13,4 +13,4 @@ function NpmPackagesSearch(): ReactElement {
   );
 }
 
-export default NpmPackagesSearch;
+export default NpmPackageSearch;

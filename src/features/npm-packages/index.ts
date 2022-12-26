@@ -1,4 +1,11 @@
 import NpmPackageSearchInput from 'src/features/npm-packages/NpmPackageSearchInput';
-import NpmPackageItem from 'src/features/npm-packages/NpmPackageItem';
+import NpmPackageList from 'src/features/npm-packages/NpmPackageList';
+import useNpmPackageList from 'src/features/npm-packages/use-npm-package-list';
+import useNpmPackageSearch from 'src/features/npm-packages/use-npm-package-search';
 
-export { NpmPackageSearchInput, NpmPackageItem };
+export {
+  NpmPackageSearchInput,
+  NpmPackageList,
+  useNpmPackageList,
+  useNpmPackageSearch,
+};

@@ -8,7 +8,7 @@ function useNpmPackageSearch(): [
 ] {
   const navigate = useNavigate();
   const [search, setSearch] = useState(String);
-  const onSearch = (): boolean => Boolean(navigate(`/npm/packages/${search}`));
+  const onSearch = (): boolean => Boolean(navigate(`/npm/package/${search}`));
 
   return [search, setSearch, onSearch];
 }

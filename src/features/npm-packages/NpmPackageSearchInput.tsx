@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import { InputSearch, Label } from 'src/components';
-import useNpmPackageSearch from './useNpmPackageSearch';
+import { useNpmPackageSearch } from 'src/features/npm-packages';
 
 function NpmPackageSearchInput(): ReactElement {
   const [search, setSearch, onSearch] = useNpmPackageSearch();

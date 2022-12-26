@@ -1,7 +1,7 @@
 import {
-  NpmPackages,
-  NpmPackagesItem,
-  NpmPackagesSearch,
+  NpmPackage,
+  NpmPackageResult,
+  NpmPackageSearch,
 } from 'src/pages/npm-packages';
 
-export { NpmPackages, NpmPackagesItem, NpmPackagesSearch };
+export { NpmPackage, NpmPackageResult, NpmPackageSearch };
