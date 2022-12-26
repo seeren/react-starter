@@ -8,7 +8,7 @@ Types are used by every files whos need them.
 
 _types/npm-package-slice-type.ts_
 
-```tsx
+```ts
 import { NpmPackageResult } from 'src/models';
 
 type NpmPackageSliceType = {
