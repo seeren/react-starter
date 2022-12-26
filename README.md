@@ -6,7 +6,7 @@ This starter provide ready to dev [react-app](https://create-react-app.dev/) wit
 -   [Editor](#⌨️-ide)
 -   [Run](#🚀-run)
 -   [Lint](#📐-lint)
--   [Dev](#👨‍💻-develop)
+-   [Dev](#👨‍💻-dev)
 -   [Build](#🏗️-build)
 
 * * *
