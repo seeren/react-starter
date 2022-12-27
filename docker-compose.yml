@@ -13,6 +13,7 @@ services:
       target: development
     volumes:
       - .:/apps/react-starter
+      - node_modules:/apps/react-starter/node_modules
     ports:
       - ${PORT}:${PORT}
 
@@ -43,3 +44,5 @@ services:
 
 volumes:
   reload-volume:
+  node_modules:
+    name: react_starter_node_modules
