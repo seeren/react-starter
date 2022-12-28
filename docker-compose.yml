@@ -12,8 +12,8 @@ services:
       dockerfile: Dockerfile
       target: development
     volumes:
-      - .:/apps/react-starter
-      - node_modules:/apps/react-starter/node_modules
+      - ./:/apps/react-starter
+      - /apps/react-starter/node_modules
     ports:
       - ${PORT}:${PORT}
 
@@ -28,6 +28,7 @@ services:
       target: build
     volumes:
       - .:/apps/react-starter
+      - /apps/react-starter/node_modules
     command: npm run build
 
   prod:
@@ -44,5 +45,4 @@ services:
 
 volumes:
   reload-volume:
-  node_modules:
-    name: react_starter_node_modules
+
